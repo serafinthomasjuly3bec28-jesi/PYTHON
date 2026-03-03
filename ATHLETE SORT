@@ -1,0 +1,16 @@
+import sys
+
+def solve():
+    line1 = sys.stdin.readline().split()
+    if not line1:
+        return
+    n, m = map(int, line1)
+    table = []
+    for _ in range(n):
+        table.append(list(map(int, sys.stdin.readline().split())))
+    k = int(sys.stdin.readline().strip())
+    table.sort(key=lambda x: x[k])
+    for row in table:
+        print(*(row))
+if __name__ == "__main__":
+    solve()
