@@ -1,0 +1,23 @@
+import sys
+
+def check_subset():
+    input_data = sys.stdin.read().split()
+    if not input_data:
+        return
+    pointer = 0
+    t = int(input_data[pointer])
+    pointer += 1
+    
+    for _ in range(t):
+        num_a = int(input_data[pointer])
+        pointer += 1
+        set_a = set(input_data[pointer : pointer + num_a])
+        pointer += num_a
+        num_b = int(input_data[pointer])
+        pointer += 1
+        set_b = set(input_data[pointer : pointer + num_b])
+        pointer += num_b
+        print(set_a.issubset(set_b))
+
+if __name__ == "__main__":
+    check_subset()
