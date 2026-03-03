@@ -1,0 +1,9 @@
+set_a = set(input().split())
+n = int(input())
+results = []
+
+for _ in range(n):
+    other_set = set(input().split())
+    results.append(set_a > other_set)
+
+print(all(results))
