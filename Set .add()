@@ -1,0 +1,7 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+distinct_stamps = set()
+for _ in range(n):
+    distinct_stamps.add(input())
+
+print(len(distinct_stamps))
