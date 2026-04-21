@@ -1,0 +1,14 @@
+import math
+
+# Taking input for side lengths AB and BC
+ab = int(input())
+bc = int(input())
+
+# Calculating angle ACB (which equals MBC) in radians
+angle_rad = math.atan(ab / bc)
+
+# Converting radians to degrees and rounding to nearest integer
+angle_deg = round(math.degrees(angle_rad))
+
+# Printing result with the degree symbol
+print(f"{angle_deg}{chr(176)}")
