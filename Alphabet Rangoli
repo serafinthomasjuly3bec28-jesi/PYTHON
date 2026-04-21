@@ -1,0 +1,16 @@
+import string
+
+def print_rangoli(size):
+    alphabet = string.ascii_lowercase
+    lines = []
+    
+    for i in range(size):
+        # Create a string of letters separated by '-'
+        s = "-".join(alphabet[i:size])
+        # Make it symmetric and center it
+        line = (s[::-1] + s[1:]).center(4 * size - 3, "-")
+        lines.append(line)
+    
+    # Print the top half (reversed) and then the bottom half
+    print('\n'.join(lines[::-1] + lines[1:]))
+
