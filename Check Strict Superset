@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+set_a = set(input().split())
+n = int(input())
+results = []
+
+for _ in range(n):
+    other_set = set(input().split())
+    # The > operator checks for strict superset automatically
+    results.append(set_a > other_set)
+
+print(all(results))
