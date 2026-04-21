@@ -1,0 +1,6 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+k = int(input())
+room_numbers = list(map(int, input().split()))
+
+# Apply the mathematical formula
+print(((sum(set(room_numbers)) * k) - sum(room_numbers)) // (k - 1))
