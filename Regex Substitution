@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+def substitute_operators(match):
+    """Function to determine the replacement string based on the match."""
+    if match.group(0) == '&&':
+        return 'and'
+    else:
+        return 'or'
+
+# Read the number of lines
+n = int(input())
+
+# Process each line of the input
+for _ in range(n):
+    line = input()
+    
+    # We use lookarounds (?<= ) and (?= ) to ensure spaces exist 
+    # but aren't removed or skipped during the replacement process.
+    result = re.sub(r'(?<= )(&&|\|\|)(?= )', substitute_operators, line)
+    
+    print(result)
