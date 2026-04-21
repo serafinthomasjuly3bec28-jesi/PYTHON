@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read English subscription data
+n = int(input())
+english_subs = set(map(int, input().split()))
+
+# Read French subscription data
+b = int(input())
+french_subs = set(map(int, input().split()))
+
+# Calculate and print the number of students in both sets
+print(len(english_subs.intersection(french_subs)))
