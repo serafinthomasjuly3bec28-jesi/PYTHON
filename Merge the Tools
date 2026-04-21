@@ -1,0 +1,13 @@
+def merge_the_tools(string, k):
+    
+    # Iterate through the string in chunks of size k
+    for i in range(0, len(string), k):
+        # Extract the current substring of length k
+        substring = string[i : i + k]
+        
+        # Use dict.fromkeys to remove duplicates while preserving order
+        # Then join the unique keys back into a single string
+        unique_substring = "".join(dict.fromkeys(substring))
+        
+        # Print the result for this segment
+        print(unique_substring)
