@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read the main string and the substring
+S = input()
+k = input()
+
+# Use lookahead to find overlapping matches
+# re.escape is used to handle special characters in k if any
+pattern = re.compile(f"(?={re.escape(k)})")
+
+matches = list(pattern.finditer(S))
+
+if matches:
+    for m in matches:
+        # Calculate the start and end indices based on the match position
+        start = m.start()
+        end = start + len(k) - 1
+        print(f"({start}, {end})")
+else:
+    # If no match found at all
+    print("(-1, -1)")
