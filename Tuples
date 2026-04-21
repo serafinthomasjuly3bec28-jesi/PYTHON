@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    # Read the number of elements (n is required by the problem statement)
+    n = int(raw_input())
+    
+    # Read the space-separated integers, convert to a list of ints, and then to a tuple
+    t = tuple(map(int, raw_input().split()))
+    
+    # Print the hash of the tuple
+    print hash(t)
