@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+
+for _ in range(int(input())):
+    n = int(input())
+    d = deque(map(int, input().split()))
+    top = float('inf')
+    possible = True
+    
+    while d:
+        if d[0] >= d[-1]:
+            pick = d.popleft()
+        else:
+            pick = d.pop()
+            
+        if pick <= top:
+            top = pick
+        else:
+            possible = False
+            break
+            
+    print("Yes" if possible else "No")
