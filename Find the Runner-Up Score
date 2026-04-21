@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    n = int(input())
+    # Convert input scores to a set to remove duplicates, then to a list
+    arr = list(set(map(int, input().split()))) #
+
+    # Sort the list of unique scores in ascending order
+    arr.sort() #
+
+    # The runner-up score is the second-to-last element (index -2)
+    runner_up = arr[-2] #
+
+    print(runner_up) #
