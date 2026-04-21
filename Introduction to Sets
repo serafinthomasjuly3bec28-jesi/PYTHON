@@ -1,0 +1,11 @@
+def average(array):
+    # your code goes here
+    # Create a set to get distinct heights
+    distinct_heights = set(array)
+    
+    # Calculate average
+    result = sum(distinct_heights) / len(distinct_heights)
+    
+    return result
+
+
