@@ -1,0 +1,5 @@
+import re
+
+# The solution pattern
+regex_pattern = r"[,.]" 
+
