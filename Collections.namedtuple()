@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import namedtuple
+
+# Read N and the column names to define the namedtuple
+N, Student = int(input()), namedtuple('Student', input().split())
+
+# Calculate the sum of marks using a list comprehension
+total_marks = sum(int(Student(*input().split()).MARKS) for _ in range(N))
+
+# Print the average formatted to 2 decimal places
+print("{:.2f}".format(total_marks / N))
