@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Define the vowel and consonant sets
+vowels = "aeiou"
+consonants = "qwrtypsdfghjklzxcvbnm"
+
+# The pattern uses lookbehind (?<=) and lookahead (?=) 
+# to ensure the vowels are surrounded by consonants.
+# {2,} ensures there are at least 2 vowels.
+pattern = rf"(?<=[{consonants}])[{vowels}]{{2,}}(?=[{consonants}])"
+
+# Read input from stdin
+s = input().strip()
+
+# Find all non-overlapping matches (case-insensitive)
+matches = re.findall(pattern, s, re.IGNORECASE)
+
+# Output results
+if matches:
+    for match in matches:
+        print(match)
+else:
+    print("-1")
