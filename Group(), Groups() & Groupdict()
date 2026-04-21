@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read the input string from STDIN
+s = input().strip()
+
+# Search for the first alphanumeric character that repeats
+# ([a-zA-Z0-9]) -> Group 1: any alphanumeric char
+# \1           -> Matches the exact same char as Group 1
+m = re.search(r'([a-zA-Z0-9])\1', s)
+
+# If a match is found, print the captured character
+if m:
+    print(m.group(1))
+else:
+    print("-1")
